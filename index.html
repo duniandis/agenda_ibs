@@ -346,6 +346,7 @@
       max-width: 90vw
     }
     
+    #toast[hidden],
     #toast:empty {
       display: none
     }
@@ -630,8 +631,7 @@
     </button>
    </div>
   </dialog>
-  <div id="toast" role="status">
-  </div>
+  <div id="toast" role="status" hidden></div>
   <script type="module">
     // 1. KONFIGURASI — sumber tunggal ada di AGENDA_CONFIG di atas.
     const config = AGENDA_CONFIG.firebase;
@@ -698,9 +698,14 @@
     }
     
     function message(s) {
-      $('toast').textContent = s;
+      const toast = $('toast');
+      toast.textContent = s;
+      toast.hidden = !s;
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => $('toast').textContent = '', 6000)
+      toastTimer = setTimeout(() => {
+        toast.hidden = true;
+        toast.textContent = '';
+      }, 6000);
     }
     
     function problem(e) {

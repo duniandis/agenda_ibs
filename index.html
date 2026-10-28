@@ -740,7 +740,8 @@
       $('summary').textContent = filtered.length ? `${page*50+1}–${Math.min((page+1)*50,filtered.length)} dari ${filtered.length} hasil` : '0 hasil';
       $('empty').hidden = filtered.length > 0;
       $('empty').textContent = ready ? (data.length ? 'Tidak ada surat sesuai pencarian.' : 'Belum ada surat. Tambahkan surat pertama Anda.') : 'Data belum tersedia. Periksa status koneksi.';
-      $('rows').innerHTML = filtered.slice(page * 50, (page + 1) * 50).map(d => `<tr><td><b>${esc(d.nomorBerkas)}</b></td><td>${esc(d.tanggal)}</td><td>${esc(d.alamatPenerima)}</td><td>${esc(d.perihal)}</td><td>${esc(d.pengirim)}</td><td>${esc(d.keterangan)}</td><td>${esc(time(d.timestamp))}</td><td class="actions"><button data-action="view" data-id="${esc(d.id)}">Lihat</button> <button data-action="editXX" data-id="${esc(d.id)}">Edit</button> <button class="danger" data-action="deleteXX" data-id="${esc(d.id)}">Hapus</button></td></tr>`).join('')
+      $('rows').innerHTML = filtered.slice(page * 50, (page + 1) * 50).map(d => `<tr><td><b>${esc(d.nomorBerkas)}</b></td><td>${esc(d.tanggal)}</td><td>${esc(d.alamatPenerima)}</td><td>${esc(d.perihal)}</td><td>${esc(d.pengirim)}</td><td>${esc(d.keterangan)}</td><td>${esc(time(d.timestamp))}</td><td class="actions"><button data-action="view" data-id="${esc(d.id)}">Lihat</button> <button disabled data-action="edit" data-id="${esc(d.id)}">Edit</button> <button disabled class="danger" data-action="delete" data-id="${esc(d.id)}">Hapus</button></td></tr>`).join('')
+     
     }
     
     // 5. KONEKSI FIRESTORE — pembaruan data otomatis dari server.

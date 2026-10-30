@@ -42,32 +42,33 @@
     };
   </script>
   <!-- TAMPILAN: warna, ukuran, dan tata letak -->
-    /* LOGO HEADER PT WIKI */
-  .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-  
-  .logo {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-  
-  /* Tampilan HP */
-  @media (max-width: 600px) {
-    .header-logo {
-      gap: 12px;
-    }
-  
-    .logo {
-      width: 55px;
-      height: 55px;
-    }
-  }
+
   <style>
+       /* LOGO HEADER */
+   .header-logo {
+     display: flex;
+     align-items: center;
+     gap: 18px;
+   }
+   
+   .logo {
+     width: 75px;
+     height: 75px;
+     object-fit: contain;
+     flex-shrink: 0;
+   }
+   
+   /* Tampilan HP */
+   @media (max-width: 600px) {
+     .header-logo {
+       gap: 12px;
+     }
+   
+     .logo {
+       width: 55px;
+       height: 55px;
+     }
+   }
     :root {
       --ink: #1d6656;
       --green: #ffc0cb;

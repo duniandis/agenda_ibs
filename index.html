@@ -42,6 +42,31 @@
     };
   </script>
   <!-- TAMPILAN: warna, ukuran, dan tata letak -->
+    /* LOGO HEADER PT WIKI */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  
+  /* Tampilan HP */
+  @media (max-width: 600px) {
+    .header-logo {
+      gap: 12px;
+    }
+  
+    .logo {
+      width: 55px;
+      height: 55px;
+    }
+  }
   <style>
     :root {
       --ink: #1d6656;
@@ -441,19 +466,19 @@
   </style>
  </head>
  <body>
-  <header>
-   <div>
-    <small id="instansi">
-     AGENDA IBS
-    </small>
-    <h1 id="namaagenda">
-     Buku Surat
-    </h1>
-    <div class="status" id="status" role="status">
-     Menyiapkan koneksi…
-    </div>
+ <header>
+   <div class="header-logo">
+     <img src="LOGO.png" alt="Logo PT WIKI" class="logo">
+ 
+     <div>
+       <small id="instansi">AGENDA PT. WIKI</small>
+       <h1 id="namaagenda">Buku Surat</h1>
+       <div class="status" id="status">
+         Menyiapkan koneksi…
+       </div>
+     </div>
    </div>
-  </header>
+ </header>
   <main>
    <div hidden="" id="notice" role="alert">
    </div>
